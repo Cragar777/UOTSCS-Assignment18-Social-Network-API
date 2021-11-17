@@ -26,3 +26,4 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 Here is a video link demonstrating the API functionality.
 
+https://watch.screencastify.com/v/wKFEoBnO50zRQlhgNNk8
