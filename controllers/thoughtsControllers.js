@@ -53,7 +53,7 @@ const thoughtMethods = {
     // add a reaction
     addReaction(req, res) {
         Thought.findOneAndUpdate({ _id: req.params.id }, {
-            $addToSet: { friends: req.params.friendsId }
+            $addToSet: { reactions: req.body }
         })
             .then(thoughtData => res.json(thoughtData))
             .catch(err => {
@@ -64,7 +64,7 @@ const thoughtMethods = {
     // delete a reaction   
     deleteReaction(req, res) {
         Thought.findOneAndUpdate({ _id: req.params.id }, {
-            $pull: { friends: req.params.friendsId }
+            $pull: { reactions: {reactionId: req.params.reactionId} }
         })
             .then(thoughtData => res.json(thoughtData))
             .catch(err => {
